@@ -1,0 +1,34 @@
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[,] corporate =
+        {
+            {"Robert", "Bavin"}, {"Simon", "Bright"},
+            {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+            {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+        };
+
+        string[,] external =
+        {
+            {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+            {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+        };
+
+        // Chamando método para exibir emails
+        DisplayEmailAddresses(corporate, "contoso.com");
+        DisplayEmailAddresses(external, "hayworth.com");
+    }
+
+    static void DisplayEmailAddresses(string[,] names, string domain)
+    {
+        for (int i = 0; i < names.GetLength(0); i++)
+        {
+            string email = $"{names[i,0].ToLower()}{names[i,1].ToLower()}@{domain}";
+            Console.WriteLine(email);
+        }
+    }
+}
